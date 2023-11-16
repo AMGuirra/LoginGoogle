@@ -24,7 +24,7 @@ public class MainActivity3 extends AppCompatActivity {
             textEmail.setText("Olá: " + email);
         }
 
-        Button btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar = findViewById(R.id.btnVoltar); // Remove a redeclaração
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
