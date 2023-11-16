@@ -8,13 +8,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity3 extends AppCompatActivity {
+
+    FirebaseDatabase firebaseDatabase;
+
+    DatabaseReference databaseReference;
+
     Button btnVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        databaseReference = firebaseDatabase.getReference();
+
 
         TextView textEmail = findViewById(R.id.textEmail);
 
