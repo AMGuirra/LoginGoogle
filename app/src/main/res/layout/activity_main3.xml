@@ -7,11 +7,25 @@
     android:background="@android:color/white"
     tools:context=".MainActivity3">
 
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="120dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="100dp"
+        android:text="Salvar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/btnVoltar"
+        app:layout_constraintTop_toBottomOf="@+id/digite" />
+
     <TextView
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
         android:text="Olá: "
         android:textSize="24sp"
         android:textStyle="bold"
@@ -22,27 +36,25 @@
         android:id="@+id/btnVoltar"
         android:layout_width="120dp"
         android:layout_height="56dp"
-        android:layout_marginTop="588dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="100dp"
         android:text="Voltar"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Não tem nada aqui ainda, volte em breve!"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/digite" />
+
+    <EditText
+        android:id="@+id/digite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="188dp"
+        android:ems="10"
+        android:hint="Digite nome"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
