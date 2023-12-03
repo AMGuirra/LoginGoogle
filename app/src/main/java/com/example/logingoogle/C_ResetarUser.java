@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity2 extends AppCompatActivity {
+public class C_ResetarUser extends AppCompatActivity {
 
     private EditText editTextEmailReset;
     private Button btResetarSenha, btVoltar;
@@ -22,7 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.c_resetar);
 
         editTextEmailReset = findViewById(R.id.editTextEmailReset);
         btResetarSenha = findViewById(R.id.buttonReset);
@@ -39,9 +39,11 @@ public class MainActivity2 extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity2.this, "E-mail de recuperação de senha enviado.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(C_ResetarUser.this, "E-mail de recuperação de senha enviado.", Toast.LENGTH_SHORT).show();
+                                        // Limpar o EditText após o envio do e-mail
+                                        editTextEmailReset.setText("");
                                     } else {
-                                        Toast.makeText(MainActivity2.this, "Falha ao enviar e-mail de recuperação de senha.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(C_ResetarUser.this, "Falha ao enviar e-mail de recuperação de senha.", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -54,7 +56,7 @@ public class MainActivity2 extends AppCompatActivity {
         btVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                Intent intent = new Intent(C_ResetarUser.this, A_Home.class);
                 startActivity(intent);
             }
         });

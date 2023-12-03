@@ -13,16 +13,19 @@
         android:theme="@style/Theme.LoginGoogle"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity4"
+            android:name=".fLista"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".B_CriarUser"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".D_PagUser"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".C_ResetarUser"
+            android:exported="false" />
+        <activity
+            android:name=".A_Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
