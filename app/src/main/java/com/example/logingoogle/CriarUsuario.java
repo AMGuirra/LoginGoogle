@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class B_CriarUser extends AppCompatActivity {
+public class CriarUsuario extends AppCompatActivity {
 
     EditText editTextNome, editTextEmail, editTextPassword;
     Button buttonCreate;
@@ -19,7 +19,7 @@ public class B_CriarUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.b_criaruser);
+        setContentView(R.layout.activity_criaruser);
 
         editTextNome = findViewById(R.id.editTextNome);
         editTextEmail = findViewById(R.id.editTextEmail);
@@ -33,13 +33,13 @@ public class B_CriarUser extends AppCompatActivity {
             String password = editTextPassword.getText().toString().trim();
 
             if (nome.isEmpty()) {
-                Toast.makeText(B_CriarUser.this, "Por favor, insira um nome", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CriarUsuario.this, "Por favor, insira um nome", Toast.LENGTH_SHORT).show();
             } else if (email.isEmpty()) {
-                Toast.makeText(B_CriarUser.this, "Por favor, insira um e-mail", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CriarUsuario.this, "Por favor, insira um e-mail", Toast.LENGTH_SHORT).show();
             } else if (isValidEmail(email)) {
                 createFirebaseUser(nome, email, password);
             } else {
-                Toast.makeText(B_CriarUser.this, "Email inválido", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CriarUsuario.this, "Email inválido", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -56,13 +56,13 @@ public class B_CriarUser extends AppCompatActivity {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(B_CriarUser.this, "Usuário criado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CriarUsuario.this, "Usuário criado", Toast.LENGTH_SHORT).show();
                         // Limpar os campos após criar o usuário com sucesso
                         editTextNome.setText("");
                         editTextEmail.setText("");
                         editTextPassword.setText("");
                     } else {
-                        Toast.makeText(B_CriarUser.this, "Erro ao criar usuário", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CriarUsuario.this, "Erro ao criar usuário", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
